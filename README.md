@@ -67,7 +67,7 @@ passwd = 'admin'
   - 5.开始运行：
   -p 前端端口号：10086 -p 后端端口号：10010                      这个前/后端端口号需要与api/aff.py中的一致
   ```bash 
-  docker run  -d --name=subweb --restart=always -v /root/subweb:/subweb -p 10086:10086 -p 10010:10010  niconewbeee/subweb:basic
+  docker run  -d --name=subweb  --privileged=true --restart=always -v /root/subweb:/subweb -p 10086:10086 -p 10010:10010  niconewbeee/subweb:basic
   ```
   - 6.登陆管理页面
 
@@ -92,7 +92,7 @@ docker rm -f subweb
 
 - 11.如何同步最新源码 
 ```bash
-rm -rf /root/subconverter
+rm -rf /root/subweb
 重复2，3，9，6
 或者看看docker/update.sh 找找灵感？
 ```

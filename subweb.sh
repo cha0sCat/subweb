@@ -25,7 +25,7 @@ do
     number=$?                       #获取进程数量
     if [ $number -eq 0 ]            #如果进程数量为0
     then                            #重新启动服务器，或者扩展其它内容。
-        cd /subweb/config
+        cd /root/subweb/config
         ./subconverter &
     fi
     proc_name="python3"        #进程名
@@ -38,7 +38,7 @@ do
     number=$?                       #获取进程数量
     if [ $number -eq 0 ]            #如果进程数量为0
     then                            #重新启动服务器，或者扩展其它内容。
-        python3 /subweb/api.py &   #运行web服务
+        python3 /root/subweb/api.py &   #运行web服务
     fi
 
     sleep 60s
